@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyStore - Product Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="layout">
+
+    <aside>
+        <h2>MyStore</h2>
+
+        <div class="sidebar-heading">Products</div>
+
+        <button class="nav-link active" data-category="all" type="button">
+            All Products
+        </button>
+
+        <div id="categoryList"></div>
+
+        <div class="sidebar-heading">Stock</div>
+
+        <button class="nav-link" data-stock="all" type="button">
+            All Stock
+        </button>
+
+        <button class="nav-link" data-stock="true" type="button">
+            In Stock
+        </button>
+
+        <button class="nav-link" data-stock="false" type="button">
+            Out of Stock
+        </button>
+    </aside>
+
+    <main>
+        <div class="topbar">
+            <h1 id="pageTitle">All Products</h1>
+
+            <button id="addItemBtn" class="primary" type="button">
+                + Add New Item
+            </button>
+        </div>
+
+        <!-- Add Product Form -->
+        <section id="addItemForm" class="panel hidden">
+            <h3>Add New Product</h3>
+
+            <div class="form-grid">
+                <div>
+                    <label for="itemName">Product Name</label>
+                    <input id="itemName" type="text"
+                           placeholder="Enter product name">
+                </div>
+
+                <div>
+                    <label for="itemPrice">Price</label>
+                    <input id="itemPrice" type="number" min="0"
+                           placeholder="Enter price">
+                </div>
+
+                <div>
+                    <label for="itemCategory">Category</label>
+                    <input id="itemCategory" type="text"
+                           placeholder="e.g. electronic">
+                </div>
+
+                <div>
+                    <label for="itemStock">Stock Status</label>
+                    <select id="itemStock">
+                        <option value="true">In Stock</option>
+                        <option value="false">Out of Stock</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="itemColor">Color</label>
+                    <input id="itemColor" type="text"
+                           placeholder="Enter color">
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button id="saveItemBtn" class="primary" type="button">
+                    Save Product
+                </button>
+
+                <button id="cancelItemBtn" class="secondary" type="button">
+                    Cancel
+                </button>
+            </div>
+        </section>
+
+        <!-- Total Amount -->
+        <section class="panel total-section">
+            <h3>Total Amount of In-Stock Products</h3>
+            <h2 id="totalAmount">Rs. 0</h2>
+        </section>
+
+        <!-- Price Sorting -->
+        <section class="panel">
+            <div class="toolbar">
+                <strong>Sort by price:</strong>
+
+                <button id="ascending" class="secondary" type="button">
+                    Low to High ↑
+                </button>
+
+                <button id="descending" class="secondary" type="button">
+                    High to Low ↓
+                </button>
+
+                <button id="clearSort" class="secondary" type="button">
+                    Clear Sort
+                </button>
+            </div>
+        </section>
+
+        <!-- Product Table -->
+        <section class="panel">
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Stock</th>
+                            <th>Color</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="productTable"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="task1.js"></script>
+</body>
+</html>
